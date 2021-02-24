@@ -1,0 +1,19 @@
+{% extends 'shoping/base.html' %}
+ {% load static %}
+
+{% block title %}
+Логин
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="form-group">
+        <form action=""  method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Войти</button>
+            <span class="badge bg-primary">{{ user }}</span>
+        </form>
+</div>
+
+{% endblock %}
+{% csrf_token %}

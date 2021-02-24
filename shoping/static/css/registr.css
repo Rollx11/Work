@@ -1,0 +1,25 @@
+body{
+    background: aqua;
+
+}
+.container{
+    padding: 50px;
+
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    justify-content: center;
+    text-align: -webkit-center;
+    width: 40%;
+    padding: 10px;
+    font-weight: 600;
+    margin: auto
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+}
