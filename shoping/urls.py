@@ -14,5 +14,10 @@ urlpatterns = [
 
     path('logout', v.logout_view, name='logout'),
 
+    path('searchs', v.searchs, name='searchs'),
+
+
+
+
 
 ]

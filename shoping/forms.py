@@ -26,7 +26,5 @@ class LoginForm(forms.Form):
    password = forms.CharField(widget=forms.PasswordInput)
 
 class SearchForm(forms.Form):
-     # search = forms.CharField(required=False, label='', label_suffix='')
-      # required отвечает за то является ли поле обязательным
       search = forms.CharField(required=False,
-                               label='', )
+                               label='wwww', )

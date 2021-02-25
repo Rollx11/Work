@@ -1,12 +1,19 @@
 body{
     background-color: #808080;
 }
-.img-fluid{
-    width: 100%;
-    height: auto;
+
+
+
+.carousel-inner{
+    width: 1200px;
+    height: 720px;
 }
 
-.dropdown-menu{
-    margin-left: -50px
+.title{
+
+    font-size: 40px;
+    text-align: center;
+    font-style: italic;
+    color: brown;
 
 }

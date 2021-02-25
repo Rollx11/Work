@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/drink.css' %}">
+        <link rel="stylesheet" href="{% static 'css/drink.css' %}">
         <h1>Сайт Напитков</h1>
         {% for drink in drinks %}
-            <div class="alert alert-primary mt-2">
+            <div class="alert alert-warning ">
                 <h5>Название напитка: {{ drink.title }}</h5>
                 <p>Тип напитка: {{drink.drink_title }}</p>
                 <p>Описание: {{ drink.description }}</p>

@@ -8,8 +8,18 @@ from .models import Drink
 
 
 
+def searchs(request):
+    if request.method =='POST':
+        search = request.POST.get('search')
+        post = Drink.objects.all().filter(title=search)
+        return  render(request, 'shoping/main.html', {'post': post})
+
+
+
 def register(request):
+
     if request.method == 'POST':
+
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
@@ -51,11 +61,10 @@ def logins(request):
             username = form.cleaned_data['login']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
-
             if user:
                 login(request, user)
-                if request.GET and 'next' in request.GET:
-                     return redirect(request.GET['next'])
+               # if request.GET and 'next' in request.GET:
+                   #  return redirect(request.GET['next'])
                 return redirect('/')
             else:
                 form.add_error('login', 'Bad login or password')
