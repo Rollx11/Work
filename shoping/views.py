@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 
-from .forms import LoginForm, RegisterForm, SearchForm
+from .forms import LoginForm, RegisterForm
 from .models import Drink
 
 
@@ -10,8 +10,8 @@ from .models import Drink
 
 def searchs(request):
     if request.method =='POST':
-        search = request.POST.get('search')
-        post = Drink.objects.all().filter(title=search)
+        search = request.POST['search']
+        post = Drink.objects.filter(title=search)
         return  render(request, 'shoping/main.html', {'post': post})
 
 
@@ -29,7 +29,7 @@ def register(request):
             return redirect('/')
     else:
         form = RegisterForm()
-    return render(request, 'shoping/register.html', {'form': form})
+    return render(request, 'shoping/register.html', {'form':form})
 
 
 
@@ -63,8 +63,6 @@ def logins(request):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
-               # if request.GET and 'next' in request.GET:
-                   #  return redirect(request.GET['next'])
                 return redirect('/')
             else:
                 form.add_error('login', 'Bad login or password')

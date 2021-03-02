@@ -18,6 +18,7 @@ class Category(models.Model):
 
 
 class Drink(models.Model):
+    image = models.ImageField(upload_to='images/', blank=True, verbose_name='Картинка')
     title = models.CharField(max_length=100, verbose_name="Название напитка")
     drink_title = models.CharField(max_length=100, verbose_name="Тип напитка")
     description = models.CharField(max_length=100, verbose_name="Описание")

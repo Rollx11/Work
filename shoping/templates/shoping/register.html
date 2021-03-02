@@ -1,9 +1,11 @@
 {% extends 'shoping/base.html' %}
+
  {% load static %}
 {% block title %}
 Логин
 {% endblock %}
 {% block content %}
+{% include 'shoping/includes/html.html' %}
 <link rel="stylesheet" href="{% static 'css/registr.css' %}">
   <h4 class="title">Регистрация</h4>
    <div class="container">

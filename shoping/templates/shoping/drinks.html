@@ -1,20 +1,26 @@
 {% extends 'shoping/base.html' %}
+
  {% load static %}
 
 {% block title %}
 {{ title }}
 {% endblock %}
 
+
 {% block content %}
-        <link rel="stylesheet" href="{% static 'css/drink.css' %}">
+ {% include 'shoping/includes/html.html' %}
+    <link rel="stylesheet" href="{% static 'css/drink.css' %}">
+    <div class="container">
         <h1>Сайт Напитков</h1>
+
         {% for drink in drinks %}
             <div class="alert alert-warning ">
-                <h5>Название напитка: {{ drink.title }}</h5>
-                <p>Тип напитка: {{drink.drink_title }}</p>
-                <p>Описание: {{ drink.description }}</p>
-        {% endfor %}
-            </div>
 
+                <h5>Название напитка: {{ drink.title }}</h5>
+                <p>Описание: {{ drink.description }}</p>
+                <img class="card-img" src="{{ MEDIA_URL }}{{ drink.image }}" alt="Card image cap">
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
 

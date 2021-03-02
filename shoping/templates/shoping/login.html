@@ -5,15 +5,19 @@
 Логин
 {% endblock %}
 {% block content %}
+{% include 'shoping/includes/html.html' %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
-<div class="form-group">
-        <form action=""  method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Войти</button>
-            <span class="badge bg-primary">{{ user }}</span>
-        </form>
-</div>
+
+    <div class="container" style="padding: 150px; margin-top: 110px">
+        <div class="d-flex justify-content-center " style="text-align: end">
+            <form action=""  method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Войти</button>
+                <span class="badge bg-primary">{{ user }}</span>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}
 {% csrf_token %}

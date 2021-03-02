@@ -1,3 +1,23 @@
 body{
     background: #baabbe;
 }
+
+h1{
+   text-align: center;
+}
+.container{
+    padding: 100px;
+    flex-direction:row ;
+
+}
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.card-img{
+
+    height: 100px;
+    width: 100px;
+}

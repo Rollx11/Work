@@ -25,6 +25,3 @@ class LoginForm(forms.Form):
                            help_text='')
    password = forms.CharField(widget=forms.PasswordInput)
 
-class SearchForm(forms.Form):
-      search = forms.CharField(required=False,
-                               label='wwww', )
